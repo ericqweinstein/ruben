@@ -6,7 +6,7 @@ begin
   ruben = Robot.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
 rescue SocketError
   puts "-- Usage: ruben <server> <port> <channel> <nick>"
-  puts "-- Error: Either \"#{ARGV[1]}\" is not a valid IRC network or \"#{ARGV[2]}\" is not a valid port number."
+  puts "-- Error: Either \"#{ARGV[0]}\" is not a valid IRC network or \"#{ARGV[1]}\" is not a valid port number."
   puts "-- You can find help at http://www.irchelp.org/"
 end
 
