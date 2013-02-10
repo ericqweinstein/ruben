@@ -13,7 +13,7 @@ Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](ht
 
 ###Installation
 
-Ruben isn't quite finished, so he hasn't been pushed to RubyGems. If you want to get your own copy of Ruben, can clone the repo:
+Ruben isn't quite finished, so he hasn't been pushed to RubyGems. If you want to get your own copy of Ruben, you can clone the repo:
 
     $ git clone https://github.com/ericqweinstein/ruben
 
