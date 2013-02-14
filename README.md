@@ -13,19 +13,7 @@ Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](ht
 
 ###Installation
 
-Ruben isn't quite finished, so he hasn't been pushed to RubyGems. If you want to get your own copy of Ruben, you can clone the repo:
-
-    $ git clone https://github.com/ericqweinstein/ruben.git
-
-In the `ruben/` directory, run his (admittedly sparse) tests:
-
-    $ rake
-
-Build the gem:
-
-    $ gem build ruben.gemspec
-
-And install it:
+Ruben's a little janky, but he works. Version 1.0.0 is available from RubyGems; you can get your version of Ruben by typing
 
     $ gem install ruben
 
@@ -47,11 +35,9 @@ You should see:
 
     ...
 
-And so on.
-
 ###Adding Scripts
 
-You can extend Ruben's functionality by adding scripts to `/scripts`, like so:
+You can extend Ruben's functionality by adding scripts to `/scripts`. Each script should be a `.rb` file that instantiates a new `Listener` object, like so:
 
     Listener.new(/Regexp/, "response string")
 
