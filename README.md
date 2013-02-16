@@ -13,7 +13,7 @@ Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](ht
 
 ###Installation
 
-Ruben's a little janky, but he works. Version 1.0.0 is available from RubyGems; you can get your version of Ruben by typing
+Ruben's a little janky, but he works. Version 1.0.1 is available from RubyGems; you can get your version of Ruben by typing
 
     $ gem install ruben
 
@@ -39,7 +39,11 @@ You should see:
 
 You can extend Ruben's functionality by adding scripts to `/scripts`. Each script should be a `.rb` file that instantiates a new `Listener` object, like so:
 
-    Listener.new(/Regexp/, "response string")
+    thing_to_do lambda do
+      # Arcane magicks go here
+    end
 
-Ruben's listeners hear every incoming IRC message. If a listener's Regexp matches the inbound message, Ruben will respond with the associated text string.
+    Listener.new(/Regexp/, thing_to_do)
+
+Ruben's listeners hear every incoming IRC message. If a listener's Regexp matches the inbound message, Ruben will call the associated lambda.
 

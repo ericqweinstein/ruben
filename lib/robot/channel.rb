@@ -5,7 +5,7 @@ Dir[File.dirname(__FILE__) + "/scripts/*.rb"].each { |script| require script }
 
 module Channel
 
-  PARTING_MESSAGES = ["Goodbye!", "Peace!", "Later.", "I'm out!"]
+  PARTING_MESSAGES = ["bye", "peace!", "later", "I'm out"]
 
   def send(msg)
     @socket.puts msg
@@ -29,7 +29,7 @@ module Channel
     # Respond to messages in the channel
     @listeners.each do |listener|
       if @inbound.match(listener.pattern)
-        say listener.response
+        listener.response.call
       end
     end
   end

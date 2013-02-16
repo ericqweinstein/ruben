@@ -3,7 +3,7 @@
 require_relative "../lib/robot"
 
 begin
-  ruben = Robot.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
+  $ruben = Robot.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
 rescue SocketError
   puts "-- Usage: ruben <server> <port> <channel> <nick>"
   puts "-- Error: Either \"#{ARGV[0]}\" is not a valid IRC network or \"#{ARGV[1]}\" is not a valid port number."
@@ -11,7 +11,7 @@ rescue SocketError
 end
 
 # Ensure Ruben leaves politely when ^C-ed
-trap("INT") { ruben.quit }
+trap("INT") { $ruben.quit }
 
-ruben.run
+$ruben.run
 
