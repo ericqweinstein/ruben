@@ -5,5 +5,5 @@ say_hello = lambda do
   $ruben.say "#{greetings.sample}"
 end
 
-Listener.new(/:(?:hi|hello|hey)\s*,?\s*(?:ruben)/i, say_hello)
+Listener.new(/ :(?:hi|hello|hey)\s*,?\s*(?:ruben)/i, say_hello)
 

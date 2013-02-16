@@ -5,5 +5,5 @@ youre_welcome = lambda do
   $ruben.say "#{responses.sample}"
 end
   
-Listener.new(/:(?:thanks|ty|thank\s*you),?\s*(?:ruben)/i, youre_welcome)
+Listener.new(/ :(?:thanks|ty|thank\s*you),?\s*(?:ruben)/i, youre_welcome)
 

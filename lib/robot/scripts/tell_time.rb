@@ -7,5 +7,5 @@ what_time = lambda do
   $ruben.say "I dunno, around #{Time.now.localtime.strftime("#{current_hour}:%M %p")}"
 end
 
-Listener.new(/(?:what\s*time)/i, what_time)
+Listener.new(/ :(?:what\s*time)/i, what_time)
 
