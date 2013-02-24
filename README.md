@@ -39,11 +39,13 @@ You should see:
 
 You can extend Ruben's functionality by adding scripts to `/scripts`. Each script should be a `.rb` file that instantiates a new `Listener` object, like so:
 
-    thing_to_do lambda do
-      # Arcane magicks go here
-    end
+```ruby
+thing_to_do lambda do
+  # Arcane magicks go here
+end
 
-    Listener.new(/Regexp/, thing_to_do)
+Listener.new(/Regexp/, thing_to_do)
+```
 
 Ruben's listeners hear every incoming IRC message. If a listener's Regexp matches the inbound message, Ruben will call the associated lambda.
 
