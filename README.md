@@ -15,25 +15,33 @@ Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](ht
 
 Ruben's a little janky, but he works. Version 1.0.1 is available from RubyGems; you can get your version of Ruben by typing
 
-    $ gem install ruben
+```bash
+$ gem install ruben
+```
 
 ###Getting Started
 
 Ruben comes with a `bin/ruben` executable, so you can run him with
 
-    $ ruben <server> <port> <channel> <nick>
+```bash
+$ ruben <server> <port> <channel> <nick>
+```
 
 Ruben takes a server name, port number, channel name, and nick as command line arguments. For example, if you type: 
 
-    $ ruben irc.freenode.net 6667 test_chan ruben_
+```bash
+$ ruben irc.freenode.net 6667 test_chan ruben_
+```
 
 You should see:
 
-    $ >> USER ruben 0 * :Ruben
-    $ >> NICK ruben_
-    $ >> JOIN #test_chan
+```bash
+$ >> USER ruben 0 * :Ruben
+$ >> NICK ruben_
+$ >> JOIN #test_chan
 
-    ...
+...
+```
 
 ###Adding Scripts
 
