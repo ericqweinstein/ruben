@@ -1,15 +1,17 @@
 Ruben
 =====
 
+[![Build Status](https://travis-ci.org/ericqweinstein/ruben.png)](https://travis-ci.org/ericqweinstein/ruben)
+
 ###Description
 
 Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](http://hubot.github.com/), his CoffeeScript brother from another mother.
 
 ###Dependencies
 
-* Ruby 1.9.3+
-* Rake 10.0.3+
-* RSpec 2.12.2+
+* Ruby 1.9.3 (not tested in 2.0)
+* Rake 10.0.4
+* RSpec 2.13.1
 
 ###Installation
 
@@ -35,7 +37,7 @@ $ ruben irc.freenode.net 6667 test_chan ruben_
 
 You should see:
 
-```bash
+```
 $ >> USER ruben 0 * :Ruben
 $ >> NICK ruben_
 $ >> JOIN #test_chan
