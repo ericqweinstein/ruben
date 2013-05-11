@@ -1,17 +1,43 @@
 #!/usr/bin/env ruby -w
 
+require "optparse"
 require_relative "../lib/robot"
 
+options = {}
+
+opt_parser = OptionParser.new do |opts|
+  opts.banner = "Usage: ruben SERVER PORT CHANNEL NICK"
+  opts.separator ""
+  opts.separator "Running Ruben:"
+  opts.separator "  SERVER is an IRC server (e.g. irc.freenode.net)."
+  opts.separator "  PORT is the IRC port (e.g. 6667)."
+  opts.separator "  CHANNEL is the IRC channel you want to join."
+  opts.separator "  NICK is the nickname you want Ruben to use."
+  opts.separator ""
+
+  opts.on("-h", "--help", "Display this screen") do
+    puts opt_parser
+    exit
+  end
+end
+
+begin opt_parser.parse!
+rescue OptionParser::InvalidOption => e
+  abort("An error occurred: #{e}. Run ruben -h for help.")
+end
+
 begin
-  $ruben = Robot.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
-rescue SocketError
-  puts "-- Usage: ruben <server> <port> <channel> <nick>"
-  puts "-- Error: Either \"#{ARGV[0]}\" is not a valid IRC network or \"#{ARGV[1]}\" is not a valid port number."
-  puts "-- You can find help at http://www.irchelp.org/"
+  ruben = Robot.instance
+  ruben.server  = ARGV[0]
+  ruben.port    = ARGV[1]
+  ruben.channel = ARGV[2]
+  ruben.nick    = ARGV[3]
+rescue SocketError => e
+  puts "An error occurred: #{e}. Run ruben -h for help."
 end
 
 # Ensure Ruben leaves politely when ^C-ed
-trap("INT") { $ruben.quit }
+trap("INT") { ruben.quit }
 
-$ruben.run
+ruben.run
 

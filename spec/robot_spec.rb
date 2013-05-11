@@ -2,11 +2,21 @@ require_relative "../lib/robot"
 
 describe Robot do
   describe "#new" do
-    it "should create robot instances" do
-      @robot = Robot.new("irc.freenode.net", 6667, "test_chan", "ruben_")
-      @robot.channel.should eql "test_chan"
-      @robot.socket.should be_an_instance_of TCPSocket
-      @robot.socket.close
+    it "should be private" do
+      expect { Robot.new }.to raise_error(NoMethodError)
+    end
+  end
+
+  describe "#instance" do
+    it "should create a Robot if there isn't one already" do
+      robot = Robot.instance
+      robot.should be_an_instance_of Robot
+    end
+
+    it "should only instantiate one robot" do
+      robot_a = Robot.instance
+      robot_b = Robot.instance
+      robot_a.should eq(robot_b)
     end
   end
 end

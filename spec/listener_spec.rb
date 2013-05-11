@@ -13,10 +13,10 @@ describe Listener do
     end
 
     it "should add itself to the listeners collector" do
-      @all_the_listeners = Listener.all_listeners
-      this_listener = (@all_the_listeners.size - 1)
-      @all_the_listeners[this_listener].pattern.should eql Regexp.new('^test$')
-      @all_the_listeners[this_listener].response.should eql "Test works!"
+      all_the_listeners = Listener.all_listeners
+      this_listener = (all_the_listeners.size - 1)
+      all_the_listeners[this_listener].pattern.should eql Regexp.new('^test$')
+      all_the_listeners[this_listener].response.should eql "Test works!"
     end
   end
 end

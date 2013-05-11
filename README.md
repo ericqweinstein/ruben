@@ -7,13 +7,13 @@ Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](ht
 
 ###Dependencies
 
-* Ruby 1.9.3+
-* Rake 10.0.3+
-* RSpec 2.12.2+
+* Ruby 1.9.3 (not tested in Ruby 2.0)
+* Rake 10.0.3 (for running tests)
+* RSpec 2.12.2 (for running tests)
 
 ###Installation
 
-Ruben's a little janky, but he works. Version 1.0.1 is available from RubyGems; you can get your version of Ruben by typing
+Version 1.0.2 is available from RubyGems; you can get your version of Ruben by typing
 
 ```bash
 $ gem install ruben
@@ -42,6 +42,8 @@ $ >> JOIN #test_chan
 
 ...
 ```
+
+You can get Ruben's usage information by typing `ruben -h` or `ruben --help`.
 
 ###Adding Scripts
 
