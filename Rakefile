@@ -32,7 +32,7 @@ end
 
 desc 'Lint'
 RuboCop::RakeTask.new(:rubocop) do |t|
-  t.patterns = %w(lib/**/*.rb)
+  t.patterns = %w(bin/**/* lib/**/*.rb)
 end
 
 desc 'Run tests'

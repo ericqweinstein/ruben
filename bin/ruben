@@ -3,8 +3,6 @@
 require 'optparse'
 require_relative '../lib/robot'
 
-options = {}
-
 opt_parser = OptionParser.new do |opts|
   opts.banner = 'Usage: ruben SERVER PORT CHANNEL NICK'
   opts.separator ''
