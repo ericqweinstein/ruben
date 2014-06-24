@@ -1,21 +1,21 @@
 #!/usr/bin/env ruby -w
 
-require "optparse"
-require_relative "../lib/robot"
+require 'optparse'
+require_relative '../lib/robot'
 
 options = {}
 
 opt_parser = OptionParser.new do |opts|
-  opts.banner = "Usage: ruben SERVER PORT CHANNEL NICK"
-  opts.separator ""
-  opts.separator "Running Ruben:"
-  opts.separator "  SERVER is an IRC server (e.g. irc.freenode.net)."
-  opts.separator "  PORT is the IRC port (e.g. 6667)."
-  opts.separator "  CHANNEL is the IRC channel you want to join."
-  opts.separator "  NICK is the nickname you want Ruben to use."
-  opts.separator ""
+  opts.banner = 'Usage: ruben SERVER PORT CHANNEL NICK'
+  opts.separator ''
+  opts.separator 'Running Ruben:'
+  opts.separator '  SERVER is an IRC server (e.g. irc.freenode.net).'
+  opts.separator '  PORT is the IRC port (e.g. 6667).'
+  opts.separator '  CHANNEL is the IRC channel you want to join.'
+  opts.separator '  NICK is the nickname you want Ruben to use.'
+  opts.separator ''
 
-  opts.on("-h", "--help", "Display this screen") do
+  opts.on('-h', '--help', 'Display this screen') do
     puts opt_parser
     exit
   end
@@ -37,7 +37,6 @@ rescue SocketError => e
 end
 
 # Ensure Ruben leaves politely when ^C-ed
-trap("INT") { ruben.quit }
+trap('INT') { ruben.quit }
 
 ruben.run
-
