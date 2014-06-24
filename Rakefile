@@ -11,23 +11,11 @@ task :help do
   puts <<-eos
   Available Rake tasks:
 
-  rake console  # Start IRB with Ruben loaded
   rake help     # Display help menu
   rake rubocop  # Lint
   rake spec     # Run tests
   rake yard     # Generate documentation
   eos
-end
-
-desc 'Start IRB with Ruben loaded'
-task :console do
-  puts 'Loading app environment...'
-
-  require 'irb'
-  require 'irb/completion'
-  require_relative 'lib/robot'
-  ARGV.clear
-  IRB.start
 end
 
 desc 'Lint'
