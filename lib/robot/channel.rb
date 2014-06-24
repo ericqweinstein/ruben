@@ -37,7 +37,7 @@ module Channel
 
     # Respond to messages in the channel.
     @listeners.each do |listener|
-      listener.response call if @inbound.match listener.pattern
+      listener.response.call if @inbound.match listener.pattern
     end
   end
 
