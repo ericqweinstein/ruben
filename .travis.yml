@@ -3,3 +3,4 @@ rvm:
   - 2.0.0
 script:
   - bundle exec rake rubocop
+  - bundle exec rake spec
