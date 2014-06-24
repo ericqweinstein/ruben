@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby -w
+# encoding: UTF-8
+# @author Eric Weinstein <eric.q.weinstein@gmail.com>
 
 require 'optparse'
 require_relative '../lib/robot'

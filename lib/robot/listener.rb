@@ -1,16 +1,28 @@
+# encoding: UTF-8
+# @author Eric Weinstein <eric.q.weinstein@gmail.com>
+
+# Collects and initalizes
+# listeners from all our scripts.
+# @attr [RegExp] pattern A pattern against
+# which to match incoming messages.
+# @attr [String] response The response to
+# provide if the RegExp matches.
 class Listener
   attr_accessor :pattern, :response
 
-  @@listeners = []
-  
+  @listeners = []
+
   def initialize(pattern, response)
-    @@listeners << self
-    @pattern = pattern
+    self.class.add_listener(self)
+    @pattern  = pattern
     @response = response
   end
 
-  def self.all_listeners
-    @@listeners
+  class << self
+    attr_reader :listeners
+
+    def add_listener(listener)
+      @listeners << listener
+    end
   end
 end
-
