@@ -21,6 +21,9 @@ class Listener
   class << self
     attr_reader :listeners
 
+    # Adds a listener object to the class'
+    # list of listeners.
+    # @param [Listener] listener A listener to add.
     def add_listener(listener)
       @listeners << listener
     end

@@ -7,6 +7,7 @@ Dir[File.dirname(__FILE__) + '/scripts/*.rb'].each { |script| require script }
 
 # Handles communcation with IRC.
 module Channel
+  # Things the robot might say when disconnecting.
   PARTING_MESSAGES = ['bye', 'peace!', 'later', 'I\'m out']
 
   # Sends a message to IRC.

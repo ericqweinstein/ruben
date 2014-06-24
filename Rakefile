@@ -3,6 +3,7 @@
 
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
+require 'yard'
 
 task default: :help
 
@@ -31,10 +32,10 @@ task :spec do
   end
 end
 
-desc 'Build Ruby documentation'
+desc 'Generate documentation'
 task :yard do
   YARD::Rake::YardocTask.new do |t|
-    t.files = ['app.rb, models/*.rb, routes/*.rb']
+    t.files = %w(bin/* lib/**/*.rb)
     t.options = ['--protected', '--private']
   end
 end
