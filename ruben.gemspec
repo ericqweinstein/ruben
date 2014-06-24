@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 Gem::Specification.new do |gem|
   gem.name        = 'ruben'
   gem.version     = '1.1.0'
