@@ -36,6 +36,6 @@ desc 'Generate documentation'
 task :yard do
   YARD::Rake::YardocTask.new do |t|
     t.files = %w(bin/* lib/**/*.rb)
-    t.options = ['--protected', '--private']
+    t.options = %w(--protected --private)
   end
 end
