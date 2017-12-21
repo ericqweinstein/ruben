@@ -1,4 +1,5 @@
 # encoding: UTF-8
+
 # @author Eric Weinstein <eric.q.weinstein@gmail.com>
 
 # Provides a random warp factor whenever

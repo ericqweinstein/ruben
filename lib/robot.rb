@@ -1,5 +1,7 @@
 # encoding: UTF-8
+
 # @author Eric Weinstein <eric.q.weinstein@gmail.com>
+
 require 'socket'
 require 'singleton'
 require_relative 'robot/channel'

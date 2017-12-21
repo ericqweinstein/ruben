@@ -1,5 +1,7 @@
 # encoding: UTF-8
+
 # @author Eric Weinstein <eric.q.weinstein@gmail.com>
+
 require_relative 'listener'
 
 # Load all our 'bot's scripts.
@@ -8,7 +10,7 @@ Dir[File.dirname(__FILE__) + '/scripts/*.rb'].each { |script| require script }
 # Handles communcation with IRC.
 module Channel
   # Things the robot might say when disconnecting.
-  PARTING_MESSAGES = ['bye', 'peace!', 'later', 'I\'m out']
+  PARTING_MESSAGES = ['bye', 'peace!', 'later', 'I\'m out'].freeze
 
   # Sends a message to IRC.
   # @param [String] msg The message to send.
@@ -31,7 +33,7 @@ module Channel
     puts '>> ' << @inbound
 
     # Stay connected to the server.
-    if @inbound.match(/^PING (?<msg>.*)$/)
+    if @inbound =~ /^PING (?<msg>.*)$/
       pong = Regexp.last_match[:msg]
       send "PONG #{pong}"
     end
@@ -44,7 +46,7 @@ module Channel
 
   # Terminates the IRC connection.
   def quit
-    say "#{PARTING_MESSAGES.sample}"
+    say PARTING_MESSAGES.sample
     send "PART ##{@channel} :mic drop"
     send 'QUIT'
   end
