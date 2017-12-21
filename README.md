@@ -3,22 +3,22 @@ Ruben
 
 [![Build Status](https://travis-ci.org/ericqweinstein/ruben.png)](https://travis-ci.org/ericqweinstein/ruben)
 
-###Description
+### Description
 Ruben is an IRC chat bot written in Ruby. He is inspired, in part, by [Hubot](http://hubot.github.com/), his CoffeeScript brother from another mother.
 
-###Dependencies
+### Dependencies
 * Ruby 1.9.3+
 * Rake 10.0.4 (for running tests, if that's your jam)
 * RSpec 2.13.0 (see above)
 
-###Installation
+### Installation
 Version 1.1.0 is available from RubyGems; you can get your version of Ruben by typing
 
 ```bash
 $ gem install ruben
 ```
 
-###Getting Started
+### Getting Started
 Ruben comes with a `bin/ruben` executable, so you can run him with
 
 ```bash
@@ -43,7 +43,7 @@ $ >> JOIN #test_chan
 
 You can get Ruben's usage information by typing `ruben -h` or `ruben --help`.
 
-###Adding Scripts
+### Adding Scripts
 You can extend Ruben's functionality by adding scripts to `/scripts`. Each script should be a `.rb` file that instantiates a new `Listener` object, like so:
 
 ```ruby
